@@ -1,0 +1,61 @@
+<!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="index.html"><%= title %><span>.</span></a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="/assets/img/logo.png" alt=""></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <% 
+          const menu = [
+    {
+        name: 'Home',
+        url: '/'
+    },
+    {
+        name: 'About',
+        url: '/about'
+    },
+    {
+      name: 'Services',
+      url: '/services'
+  },
+  {
+    name: 'Portfolio',
+    url: '/portfolio'
+},
+{
+  name: 'Team',
+  url: '/team'
+},
+{
+  name: 'RatesCalculator',
+  url: '/ratesCalculator'
+},
+{
+  name: 'Contact',
+  url: '/contact'
+}
+]
+          
+          
+          for ( let i in menu ) { %> 
+            <% if ( menu[i].name.toLowerCase() == activestate.toLowerCase() ) { %> 
+    
+              <li><a class="nav-link scrollto active" href="<%= menu[i].url %>" ><%= menu[i].name %></a></li>
+    
+            <% } else { %>
+    
+              <li><a class="nav-link scrollto" href="<%= menu[i].url %>" ><%= menu[i].name %></a></li>
+    
+            <% } %>
+        <% } %>
+       
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
