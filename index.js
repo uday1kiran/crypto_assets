@@ -11,10 +11,12 @@ app.use(express.static('public'));
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
 
-global.title = "Crypto Assets"
+//global.title = "Crypto Assets"
+
 
 app.use(function(req, res, next){
     console.log(req)
+    res.locals.title = "Marker";//To set website title
     req.active = req.path.split('/')[1] // [0] will be empty since routes start with '/'
     if (req.length === 0) req.active = "Home"
     next();
